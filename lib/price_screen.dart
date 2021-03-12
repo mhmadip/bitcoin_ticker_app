@@ -22,7 +22,7 @@ class _PriceScreenState extends State<PriceScreen> {
   }
 
   void getCurrencyData() async {
-    CurrencyRate currencyRate = CurrencyRate();
+    CoinData currencyRate = CoinData();
     double currency =
         await currencyRate.getData(selectedCurrency, selectedBase);
     double currency1 =
