@@ -12,7 +12,7 @@ class PriceScreen extends StatefulWidget {
 class _PriceScreenState extends State<PriceScreen> {
   String selectedCurrency = "USD";
   String selectedBase = cryptoList[0];
-  int currencyDataBTC, currencyDataETH, currencyDataLTC;
+  int currencyDataBTC = 0, currencyDataETH = 0, currencyDataLTC = 0;
 
   @override
   void initState() {
@@ -161,15 +161,12 @@ class _PriceScreenState extends State<PriceScreen> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    height: 150.0,
-                    padding: EdgeInsets.only(top: 30.0),
-                    color: Colors.lightGreen,
-                    child:
-                        Platform.isIOS ? iOSPicker() : androidDropDownButton(),
-                  ),
+                Container(
+                  height: 150.0,
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.only(bottom: 30.0),
+                  color: Colors.lightGreen,
+                  child: Platform.isIOS ? iOSPicker() : androidDropDownButton(),
                 )
               ]),
         ));
